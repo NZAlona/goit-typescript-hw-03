@@ -14,13 +14,10 @@ class Person {
 }
 
 abstract class House {
-  door: boolean;
-  tenants: Person[];
+  protected door: boolean = false;
+  private tenants: Person[] = [];
 
-  constructor(public key: Key) {
-    this.door = false;
-    this.tenants = [];
-  }
+  constructor(public key: Key) {}
 
   comeIn(person: Person) {
     if (this.door) {
